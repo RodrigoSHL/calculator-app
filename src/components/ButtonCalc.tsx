@@ -1,16 +1,35 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface Props {
   text: string;
   color?: string;
+  buttonWidth?: boolean;
+  action?: () => void;
 }
 
-export const ButtonCalc = ({text, color = '#2d2d2d'}: Props) => {
+export const ButtonCalc = ({
+  text,
+  color = '#2d2d2d',
+  buttonWidth = false,
+}: Props) => {
   return (
-    <View style={{...styles.button, backgroundColor: color}}>
-      <Text style={{...styles.textButton, color: (color==='#9b9b9b') ? 'black' : 'white'}}>{text}</Text>
-    </View>
+    <TouchableOpacity>
+      <View
+        style={{
+          ...styles.button,
+          backgroundColor: color,
+          width: buttonWidth ? 160 : 70,
+        }}>
+        <Text
+          style={{
+            ...styles.textButton,
+            color: color === '#9b9b9b' ? 'black' : 'white',
+          }}>
+          {text}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -26,7 +45,7 @@ const styles = StyleSheet.create({
   textButton: {
     textAlign: 'center',
     padding: 10,
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: '300',
     color: 'white',
   },
