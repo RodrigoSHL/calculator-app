@@ -75,12 +75,13 @@ const CalculatorScreen = () => {
         <ButtonCalc text={'9'} action={buildNumber} />
         <ButtonCalc text={'-'} color={'#ff9427'} action={cleanResult} />
       </View>
-      
+
       <View style={styles.buttonRow}>
         <ButtonCalc text={'0'} buttonWidth action={buildNumber} />
         <ButtonCalc text={'.'} action={buildNumber} />
         <ButtonCalc text={'='} color={'#ff9427'} action={cleanResult} />
       </View>
+      
     </View>
   );
 };
