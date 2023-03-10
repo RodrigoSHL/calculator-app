@@ -54,24 +54,28 @@ const CalculatorScreen = () => {
         <ButtonCalc text={'del'} color={'#9b9b9b'} action={cleanResult} />
         <ButtonCalc text={'/'} color={'#ff9427'} action={cleanResult} />
       </View>
+
       <View style={styles.buttonRow}>
         <ButtonCalc text={'1'} action={buildNumber} />
         <ButtonCalc text={'2'} action={buildNumber} />
         <ButtonCalc text={'3'} action={buildNumber} />
         <ButtonCalc text={'*'} color={'#ff9427'} action={cleanResult} />
       </View>
+
       <View style={styles.buttonRow}>
         <ButtonCalc text={'4'} action={buildNumber} />
         <ButtonCalc text={'5'} action={buildNumber} />
         <ButtonCalc text={'6'} action={buildNumber} />
         <ButtonCalc text={'+'} color={'#ff9427'} action={cleanResult} />
       </View>
+
       <View style={styles.buttonRow}>
         <ButtonCalc text={'7'} action={buildNumber} />
         <ButtonCalc text={'8'} action={buildNumber} />
         <ButtonCalc text={'9'} action={buildNumber} />
         <ButtonCalc text={'-'} color={'#ff9427'} action={cleanResult} />
       </View>
+      
       <View style={styles.buttonRow}>
         <ButtonCalc text={'0'} buttonWidth action={buildNumber} />
         <ButtonCalc text={'.'} action={buildNumber} />
