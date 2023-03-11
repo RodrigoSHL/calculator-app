@@ -35,6 +35,19 @@ const CalculatorScreen = () => {
     }
   };
 
+  const deleteNumber = () => {
+    let negative = '';
+    let tempNumber = number;
+    if (number.includes('-')) {
+      negative = '-';
+      tempNumber = number.substring(1);
+    }
+
+    if (tempNumber.length > 1) {
+      setNumber(negative + tempNumber.slice(0, -1));
+    } else setNumber('0');
+  };
+
   const positiveNegative = () => {
     if (number.includes('-')) {
       setNumber(number.replace('-', ''));
@@ -51,7 +64,7 @@ const CalculatorScreen = () => {
       <View style={styles.buttonRow}>
         <ButtonCalc text={'C'} color={'#9b9b9b'} action={cleanResult} />
         <ButtonCalc text={'+/-'} color={'#9b9b9b'} action={positiveNegative} />
-        <ButtonCalc text={'del'} color={'#9b9b9b'} action={cleanResult} />
+        <ButtonCalc text={'del'} color={'#9b9b9b'} action={deleteNumber} />
         <ButtonCalc text={'/'} color={'#ff9427'} action={cleanResult} />
       </View>
 
@@ -81,7 +94,6 @@ const CalculatorScreen = () => {
         <ButtonCalc text={'.'} action={buildNumber} />
         <ButtonCalc text={'='} color={'#ff9427'} action={cleanResult} />
       </View>
-      
     </View>
   );
 };
