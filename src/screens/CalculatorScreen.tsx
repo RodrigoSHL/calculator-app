@@ -103,7 +103,7 @@ const CalculatorScreen = () => {
         setNumber(`${num1 + num2}`);
         break;
       case Operators.subtract:
-        setNumber(`${num1 - num2}`);
+        setNumber(`${num2 - num1}`);
         break;
       case Operators.multiply:
         setNumber(`${num1 * num2}`);
