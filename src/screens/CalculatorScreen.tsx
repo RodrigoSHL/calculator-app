@@ -109,11 +109,10 @@ const CalculatorScreen = () => {
         setNumber(`${num1 * num2}`);
         break;
       case Operators.divide:
-        setNumber(`${num1 / num2}`);
-        break;
-      default:
+        setNumber(`${num2 / num1}`);
         break;
     }
+    setPrevNumber('0')
   };
 
   return (
